@@ -42,11 +42,11 @@ class Client:
 
         while 1:
             try:
-                # self.target_ip = input('Enter IP address of server --> ')
-                # self.target_port = int(input('Enter target port of server --> '))
+                self.target_ip = input('Enter IP address of server --> ')
+                self.target_port = int(input('Enter target port of server --> '))
 
-                # self.s.connect((self.target_ip, self.target_port))
-                self.s.connect(('192.168.64.1', 1111))
+                self.s.connect((self.target_ip, self.target_port))
+                # self.s.connect(('192.168.64.1', 1111))
 
                 break
             except:
