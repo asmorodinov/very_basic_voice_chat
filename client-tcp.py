@@ -90,6 +90,10 @@ class Client:
 
                 if c == b'x':
                     print('Exiting...', flush=True)
+
+                    # notify server just in case
+                    Message.send(MessageType.ClientCloseConnection, b'', self.s)
+
                     self.s.close()
                     self.running = False
                 elif c == b'm':
@@ -100,6 +104,9 @@ class Client:
                     # restart whole script
                     global restart
                     restart = True
+
+                    # notify server just in case
+                    Message.send(MessageType.ClientCloseConnection, b'', self.s)
 
                     self.s.close()
                     self.running = False

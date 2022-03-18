@@ -177,6 +177,9 @@ class Server:
                 elif message.header == MessageType.LeaveRoom:
                     room = None
                     self.client_leave_room(c, addr, login)
+                elif message.header == MessageType.ClientCloseConnection:
+                    self.remove_connection(c, addr)
+                    break
 
             except socket.error:
                 self.remove_connection(c, addr)

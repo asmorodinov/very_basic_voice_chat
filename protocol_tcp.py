@@ -12,6 +12,7 @@ class MessageType(enum.IntEnum):
     ConnectToRoomResponse = 7,
     InfoFromServer = 8,
     LeaveRoom = 9,
+    ClientCloseConnection = 10,
 
 class MessageStruct:
     def __init__(self, header, data):
